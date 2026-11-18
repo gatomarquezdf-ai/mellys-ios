@@ -1,0 +1,26 @@
+﻿Distribuidora Mely's Â· cÃ³mo generar el .ipa
+===========================================
+
+Apple no permite compilar ni firmar apps iOS en Windows. Este paquete se
+sube a GitHub y el flujo de trabajo "Compilar IPA" lo compila en un Mac
+gratuito de GitHub Actions.
+
+1. Crea una cuenta en https://github.com (si no tienes).
+2. Crea un repositorio nuevo, por ejemplo "melys-ios".
+3. Descomprime este ZIP y sube TODO su contenido al repositorio
+   (botÃ³n "Add file" â†’ "Upload files").
+4. Entra a la pestaÃ±a "Actions" â†’ "Compilar IPA (iOS)" â†’ "Run workflow".
+5. Espera 3 a 6 minutos. Al terminar, abre la ejecuciÃ³n y descarga el
+   artefacto "DistribuidoraMelys-unsigned-ipa".
+6. Firma e instala el .ipa en Windows con Sideloadly (https://sideloadly.io):
+   - Conecta el iPhone por cable y confÃ­a en el equipo.
+   - Arrastra el .ipa a Sideloadly y escribe tu Apple ID.
+   - En el iPhone: Ajustes â†’ General â†’ VPN y gestiÃ³n de dispositivos â†’
+     Confiar en tu Apple ID.
+   - La firma gratuita dura 7 dÃ­as; Sideloadly la renueva.
+
+Con una cuenta Apple Developer (99 USD/aÃ±o) tambiÃ©n puedes subir el .ipa
+firmado a TestFlight. Ver ios/README.md.
+
+Si tienes un Mac: abre ios/DistribuidoraMelys.xcodeproj y pulsa Run, o
+ejecuta tools/build-ipa.sh.
